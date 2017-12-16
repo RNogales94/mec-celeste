@@ -30,21 +30,18 @@
 
 \title{
     Mecánica Celeste\\
-    \large La Elipse 
+    \large La Elipse
 }
 
 
 \author{
-		Nuria Angulo Fuentes \\
-		Cristina Callejón Maleno \\
-		Verónica Guerrero Contreras \\
-		Ainoa Muros Quesada \\
-		Rafael Nogales Vaquero \\		
-		María del Mar Ruiz Martín \\		
-		Laura Prados Sáez \\
-		
-        
-        
+        Nuria Angulo Fuentes \\
+        Cristina Callejón Maleno \\
+        Verónica Guerrero Contreras \\
+        Ainoa Muros Quesada \\
+        Rafael Nogales Vaquero \\       
+        María del Mar Ruiz Martín \\        
+        Laura Prados Sáez \\
         Grado de Matemáticas\\
         Universidad de Granada - UGR\\
         \underline{Spain}\\
@@ -57,11 +54,119 @@
 \begin{document}
 \maketitle
 \begin{center}
-\includegraphics[scale=0.35]{images/escudo.png}
+\includegraphics[scale=0.45]{images/escudo.jpg}
 \end{center}
 
 \pagebreak
 
-\section{Ejercicio 1}
+\section{Introducción}
+
+
+
+\section{La elipse}
+
+
+\textbf{Definición:} se define la elipse como el lugar geométrico de los puntos de $\mathbb{R}^2$ cuya suma de las distancias a dos puntos dados, llamados focos, es constante. Es decir:\\
+
+\begin{equation} E = \{x \in \mathbb{R}^2 : \|x-F_1\| + \|x-F_2\| = d\}  \label{eq1}\end{equation}\\
+
+donde $F_1, F_2$ son los focos y d es una constante positiva. \\
+
+Buscamos expresar la elipse como 
+
+\begin{equation} \{ x \in \mathbb{R}^2 : |x| +  <x,e> = K \}  \label{eq2}\end{equation}\\
+
+para determinados $e\in \mathbb{R}^2$, $K>0$ constantes. Para ello nos centraremos en aquellas elipses que tienen el foco $F_1$ en el punto (0,0). El resto de elipses, al ser traslaciones de las anteriores, las podremos expresar como 
+
+$$  \{ x + (F_{1,1},F_{1,2}): x \in \mathbb{R}^2, |x| +  <x,e> = K \} $$  \\
+    
+donde $(F_{1,1},F_{1,2})$ es la posición del foco $F_1$.\\
+
+
+
+Sea $x \in E$, entonces podemos afirmar que se verifica:
+
+$$\|x\| + \|F_2 - x\| = d \Leftrightarrow   \|F_2 - x\| = d - \|x\| \Rightarrow (\|F_2 - x\|)^2 = (d - \|x\|)^2 \Leftrightarrow $$
+$$\Leftrightarrow \|x\|^2 + \|F_2\|^2 - 2 <F_2, x> = d^2 + \|x\|^2 -2 <d,\|x\|>  \Leftrightarrow $$
+$$\Leftrightarrow \|F_2\|^2 - 2 <F_2, x> = d^2 -2 <d,\|x\|> \Leftrightarrow$$
+$$\Leftrightarrow \frac{\|F_2\|^2}{2d} - \frac{<F_2, x>}{d} = \frac{d}{2} -\|x\| \Leftrightarrow \|x\| +  < -\frac{F_2}{d}, x> = \frac{d^2-\|F_2\|^2}{2d}$$\\
+
+
+Definiendo 
+
+\begin{equation}e := -\frac{1}{d}F_2, K:=\frac{d^2-\|F_2\|^2}{2d}  \label{eq3}\end{equation}\\
+
+obtenemos la expresión buscada.\\
+
+
+A continuación vamos a ver que todo conjunto de la forma 
+
+$$ \{ x \in \mathbb{R}^2 : |x| +  <x,e> = K \}, e \in \mathbb{R}^2, \|e\| < 1, K > 0$$  \\
+
+
+representa una elipse con el foco $F_1 = (0,0)$ para determinada distancia $d > 0$ y foco $F_2\in \mathbb{R}^2$.\\
+
+
+En virtud a las ecucaciones dadas en $(\ref{eq3})$, buscamos $F_2$, d de la forma 
+\begin{equation}F_2 = -ed  \label{eq4}\end{equation}
+\begin{equation}2dK -d^2 + \|F_2\|^2 = 0  \label{eq5}\end{equation}\\
+
+Sustituyendo $(\ref{eq4})$ en $(\ref{eq5})$ obtenemos:
+
+
+
+$$2dK -d^2 + \|ed\|^2 = 0 \Leftrightarrow d(2K - d + d\|e\|^2) = 0 \Leftrightarrow
+ \left\{
+ \begin{array}{ll}
+                  d = 0\\
+                  o\\
+                  2K - d + d\|e\|^2 = 0
+                \end{array}
+              \right.$$
+
+
+Desechamos la primera opción, puesto que sustituyendo en $(\ref{eq4})$ obtendríamos que $F_2$ es el punto (0,0), coincidiendo con $F_1$, y por tanto, no tendríamos una elipse. Desarrollamos entonces la segunda posibilidad:
+
+\begin{equation}2K - d + d\|e\|^2 = 0 \Leftrightarrow d = \frac{2K}{1 - \|e\|^2}  \label{eq6}\end{equation}
+
+
+Y sustituyendo finalmente en $(\ref{eq4})$ obtenemos la siguiente expresión: 
+
+
+\begin{equation} F_2 =  \frac{2K}{\|e\|^2 - 1} e  \label{eq7}\end{equation}
+
+
+Despejando e y K de $(\ref{eq4})$ y $(\ref{eq5})$ respectivamente, obtenemos las siguientes expresiones:
+
+\begin{equation}e = -\frac{1}{d}F_2, K=\frac{d^2-\|F_2\|^2}{2d}  \label{eq8}\end{equation}\\
+
+Pasamos ahora a sustituir en la expresión estos valores:
+
+$$\|x\| +  <x,e> = K \Leftrightarrow  \|x\| +  <x,-\frac{1}{d}F_2> = \frac{d^2-\|F_2\|^2}{2d}  \Leftrightarrow $$
+$$\Leftrightarrow 2d\|x\| +  <x,-2F_2> = d^2-\|F_2\|^2 \Leftrightarrow \|F_2\|^2  +  -2<x,F_2> = d^2 + 2d\|x\|\Leftrightarrow $$
+$$\Leftrightarrow \|x\|^2 + \|F_2\|^2  +  -2<x,F_2> = \|x\|^2 + d^2 + 2d\|x\|\Leftrightarrow (\|x - F_2\|)^2   = (\|x\|- d)^2\Leftrightarrow$$
+$$ \Leftrightarrow\left\{
+ \begin{array}{ll}
+                  \|x - F_2\|   = \|x\|- d\\
+                  o\\
+                  \|x - F_2\|   = d - \|x\|
+                \end{array}
+              \right.$$\\
+
+
+Veamos por reducción al absurdo que no es posible que se de la primera igualdad:\\
+
+$$
+\|x\| - d < \|x\| - \|F_2\| \leq \|x - F_2\| = \|x\| - d
+$$\\
+
+
+Por tanto, podemos asegurar que se da la igualdad $\|x - F_2\|   = d - \|x\|$. Y entonces
+
+$$ \|x\| + \|x - F_2\|   = d $$
+
+Concluímos así que la expresión inicial define una elipse con foco $F_1 = (0,0)$ y como parámetros d y $F_2$ los dados en $(\ref{eq6})$ y $(\ref{eq7})$.
+
 
 \end{document}
+

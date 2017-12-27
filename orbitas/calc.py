@@ -134,7 +134,6 @@ if __name__ == "__main__":
         print("Posicion NR: ", pos)
         pos = position(a[planet], epsilon[planet], anomExc_be)
         print("Posicion Be: ", pos)
-
         vel = velocidad(a[planet], epsilon[planet], period[planet], anomExc_be)
         print("Velocidad: ", vel)
 
